@@ -76,7 +76,7 @@ appmgr:
    appmgr:
      registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
      name: ric-plt-appmgr
-     tag: 0.5.4
+     tag: 0.4.3
    chartmuseum:
      registry: "docker.io"
      name: chartmuseum/chartmuseum
