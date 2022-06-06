@@ -110,7 +110,7 @@ e2mgr:
 e2term:
   alpha:
     image:
-            registry: "localhost:5001"
+      registry: "localhost:5001"
       name: ric-plt-e2
       tag: 5.5.0
     privilegedmode: false
