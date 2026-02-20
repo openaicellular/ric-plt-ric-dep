@@ -17,38 +17,6 @@
 
 common:
   k8sAPIHost: https://kubernetes.default.svc.cluster.local/
-  tillers:
-    ricxapp:
-      name: ricxapp
-      nameSpace: ricxapp
-      deployNameSpace: ricinfra
-      imagePullPolicy: IfNotPresent
-      image:
-        tillerTLSSecrets:
-          registry: nexus3.o-ran-sc.org:10002/o-ran-sc
-          name: it-dep-secret
-          tag:  0.0.2
-        tiller:
-          registry: ghcr.io
-          name: helm/tiller
-          tag: v2.17.0
-      secret:
-        create: true
-        tillerSecretName: ricxapp-tiller-secret
-        helmSecretName: ricxapp-helm-secret
-      tls:
-       authenticate: true
-       verify: true
-      serviceAccount:
-        name: tiller
-        role:
-        - apiGroups: [""]
-          resources: ["pods", "configmaps", "services"]
-          verbs: ["get", "list", "create", "delete"]
-        - apiGroups: ["extensions", "apps"]
-          resources: ["deployments"]
-          verbs: ["get", "list", "create", "delete"]
-
 
 
 
