@@ -62,6 +62,8 @@ a1mediator:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-a1
     tag: 2.5.1
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
   rmr_timeout_config:
     a1_rcv_retry_times: 20
     ins_del_no_resp_ttl: 5
@@ -81,6 +83,8 @@ appmgr:
      registry: "docker.io"
      name: chartmuseum/chartmuseum
      tag: v0.8.2
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
 
 
 dbaas:
@@ -88,6 +92,8 @@ dbaas:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-dbaas
     tag: 0.5.5
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
   enableHighAvailability: false
   # Enable pod anti affinity only if you have more than 3 k8s nodes
   enablePodAntiAffinity: false
@@ -98,6 +104,8 @@ e2mgr:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-e2mgr
     tag: 5.4.19
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
   privilegedmode: false
   globalRicId:
     ricId: "AACCE"
@@ -148,18 +156,23 @@ rtmgr:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-rtmgr
     tag: 0.8.2
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
 
 submgr:
   image:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-submgr
     tag: 0.8.2
-
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
 vespamgr:
   image:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-vespamgr
     tag: 0.7.5
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
   prometheusurl: "http://r4-infrastructure-prometheus-server.ricplt"
 
 o1mediator:
@@ -167,6 +180,8 @@ o1mediator:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-o1
     tag: 0.5.3
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
 
 xapponboarder:
   image:
@@ -179,12 +194,16 @@ xapponboarder:
      name: chartmuseum/chartmuseum
      tag: v0.8.2
   allow_redeploy: "True"
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
 
 alarmmanager:
   image:
     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
     name: ric-plt-alarmmanager
     tag: 0.5.11
+  imagePullSecrets:
+    name: secret-nexus3-o-ran-sc-org-10002
 
 influxdb:
   image:
